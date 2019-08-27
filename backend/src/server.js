@@ -1,11 +1,13 @@
 const express = require('express');
+const routes = require('./routes');
+const mongoose = require('mongoose');
 
 const server = express();
-
-server.get('/', (req, res) => {
-
-    return res.json({message:`hello ${req.query.name}`});
-
+mongoose.connect('mongodb+srv://ftonon:39727369@cluster0-w6zcn.mongodb.net/OminiStack8?retryWrites=true&w=majority', {
+    useNewUrlParser: true
 });
+
+server.use(express.json);
+server.use(routes);
 
 server.listen(3333)
