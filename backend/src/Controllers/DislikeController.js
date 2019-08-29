@@ -1,6 +1,6 @@
 const Dev = require('../models/Dev')
 
-modelu.exports = {
+module.exports = {
     async store(req, res) {
         const { user } = req.headers;
         const { devId } = req.params;
