@@ -5,6 +5,16 @@ import './Login.css'
 
 export default function Login() {
     return (
-        <img src={logo} alt="tindev" />
+        <div className="login-container">
+            <form action="">
+                <img src={logo} alt="tindev" />
+                <input type="text"
+                placeholder=""/>
+                    
+                
+            </form>
+        </div>
+
+
     );
 }
