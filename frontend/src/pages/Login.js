@@ -9,9 +9,9 @@ export default function Login() {
             <form action="">
                 <img src={logo} alt="tindev" />
                 <input type="text"
-                placeholder=""/>
-                    
-                
+                    placeholder="Digite seu usuário do Github" />
+                <button type="submit">Enviar</button>
+
             </form>
         </div>
 
