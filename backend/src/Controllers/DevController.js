@@ -6,7 +6,8 @@ module.exports = {
         const { user } = req.headers;
 
         const loggedDev = await Dev.findById(user);
-
+        console.log(loggedDev);
+        
         const users = await Dev.find({
             $and: [
                 { _id: { $ne: user } },
@@ -31,7 +32,7 @@ module.exports = {
             name,
             user: username,
             bio,
-            avatar: avatar_url
+            avatar
         })
         response.data
         return res.json(dev)

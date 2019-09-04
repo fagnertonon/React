@@ -5,7 +5,7 @@ const routes = require('./routes');
 
 const server = express();
 
-mongoose.connect('mongodb+srv://ftonon:NywbgZDYIvLtmX6X@cluster0-w6zcn.mongodb.net/OminiStack8?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://ftonon:39727369@cluster0-w6zcn.mongodb.net/OminiStack8?retryWrites=true&w=majority', {
     useNewUrlParser: true
 });
 //utilizado para a aplicação poder ser acessada a partir de qualquer endereço

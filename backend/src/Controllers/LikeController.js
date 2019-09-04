@@ -10,10 +10,10 @@ module.exports = {
 
         if (!targetDev) return req.status(400).json({ error: 'Dev not exists' });
 
-        if(targetDev.Likes.include(loggeDev._id)){
+        if(targetDev.likes.includes(loggeDev._id)){
             console.log('Match');
         }
-        loggeDev.Likes.push(targetDev._id);
+        loggeDev.likes.push(targetDev._id);
 
         await loggeDev.save();
 

@@ -10,7 +10,7 @@ module.exports = {
 
         if (!targetDev) return req.status(400).json({ error: 'Dev not exists' });
 
-        loggeDev.Dislikes.push(targetDev._id);
+        loggeDev.dislikes.push(targetDev._id);
 
         await loggeDev.save();
 

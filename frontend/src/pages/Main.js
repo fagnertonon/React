@@ -13,15 +13,16 @@ export default function Main({ match }) {
     useEffect(() => {
         async function loadUsers() {
             const response = await api.get('/devs', {
-                header: {
-                    user: match.params._id,
+                headers: {
+                    user: match.params.id,
                 }
             });
             setUsers(response.data);
+            console.log(response.data);
         }
 
         loadUsers();
-    }, [match.params._id])
+    }, [match.params.id])
 
 
     async function handleLike(id) {
@@ -31,7 +32,7 @@ export default function Main({ match }) {
             headers: { user: match.params.id },
         });
 
-        setUsers(users.filter(user => user._id == id));
+        setUsers(users.filter(user => user._id !== id));
     }
 
     async function handleDislike(id) {
@@ -41,7 +42,7 @@ export default function Main({ match }) {
             headers: { user: match.params.id },
         });
 
-        setUsers(users.filter(user => user._id == id));
+        setUsers(users.filter(user => user._id !== id));
     }
     return (
         <div className="main-container">
@@ -69,7 +70,7 @@ export default function Main({ match }) {
                                         <img src={dislike}
                                             alt="Dislike"
                                             className="dislike"
-                                            onClick={() => dislike(user._id)} />
+                                            onClick={() => handleDislike(user._id)} />
                                     </button>
                                 </div>
                             </li>
